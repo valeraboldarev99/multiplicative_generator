@@ -7,7 +7,7 @@ function xt_generator(length)
 	var x = [];
 	x[0] = 1;
 
-	for (var i = 0; i < length; i++) {
+	for (var i = 0; i < length - 1; i++) {
 		x[i + 1] = ((2**17 + 3) * x[i]) % 2**35;
 	}
 	return x;
@@ -17,7 +17,7 @@ function start()
 {
 	const length = parseInt(document.getElementById('length').value|0);
 	xt_arr = xt_generator(length);
-	// console.log(xt_arr);
+	console.log(xt_arr);
 
 	const test_number = parseInt(document.getElementById('test_number').value);
 	var test2 = document.getElementById('test2').style.display = 'none';

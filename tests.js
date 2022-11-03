@@ -20,7 +20,7 @@ function test_two(output_array)
 	var result = [];
 
 	for (var i = 0; i < output_array.length; i++) {
-		// console.log(output_array[i] +", " + output_array[i + 1]);
+		console.log(output_array[i] +", " + output_array[i + 1]);
 		result[i] = output_array[i] + ", " + output_array[i + 1];				//заполню массив парами, потом колхоз: скопирую с консоли эти пары и в экселе точечный график нарисую)
 		// ctx.fillRect(output_array[i], output_array[i + 1], 1,1);				//отрисовка точек(закомител, потому что точки рисует за пределами видимости - очень большие значения)
 	}
