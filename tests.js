@@ -166,6 +166,41 @@ function test_four(output_array)
 	drawTest(L_arr, 10);
 }
 
+function test_seven(output_array)
+{
+	// var arr = [1, -2, 1, -10];
+	var size = output_array.length;
+	var m = size + ( size % 2 ); //размер выходного буфера должен быть четным
+	var out = new Array( m );
+	var pid = ( 2.0 * Math.PI ) / size;
+	
+	var r, i, w, t;
+
+	//высчитываем среднее значение по всему интервалу
+	//для последующей нормализации
+	var mv = 0;
+	for ( t = 0; t < size; t++ ) mv += output_array[t];
+	mv = mv / size;
+
+	for ( w = 0; w < m; w++ ) {
+		var a = w * pid;
+		r = 0;
+		i = 0;
+		for ( t = 0; t < size; t++ ) {
+			//нормализация значения из интервала
+			var v = output_array[t] - mv;
+			var ta = a * t;
+			r += v * Math.cos( ta );
+			i += v * Math.sin( ta );
+		}
+		out[w] = Math.sqrt( r * r + i * i ) / size;
+	}
+
+	console.log('out');
+	console.log(out);
+	drawTest(out, 500000000);
+}
+
 function drawTest(my_array, gridScale)
 {
 	var myBarchart = new Barchart(

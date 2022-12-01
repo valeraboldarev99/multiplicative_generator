@@ -47,6 +47,10 @@ function start()
 			ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);			//clear canvas
 			test_four(xt_arr);
 			break;
+		case 7:
+			ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);			//clear canvas
+			test_seven(xt_arr);
+			break;
 		default:
 			alert('Error');
 	}
